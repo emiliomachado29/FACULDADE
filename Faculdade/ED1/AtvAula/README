@@ -1,0 +1,59 @@
+### Especificações dos dados do TAD racional ###
+
+DADOS: 2 números inteiros, representando o numerador e o denominador do número racional.
+
+### Especificação da operação generate:###
+
+ENTRADA: nenhuma
+PRÉ-CONDIÇÃO: nenhuma
+PROCESSO: criar um número racional
+SAÍDA: endereço do número racional criado
+PÓS-CONDIÇÃO: nenhuma
+
+### Especificação da operação set_value: ###
+
+ENTRADA: endereço de um número racional (R) e 2 inteiros (/1 e /2)
+PRÉ-CONDIÇÃO: número racional ser válido e /2 se diferente de zero
+PROCESSO: atribuir ao numerador de R o valor de /1 e ao denominador de R o valor de /2
+SAÍDA: 1 (sucesso) ou 0 (falha)
+PÓS-CONDIÇÃO: racional R com valores alterados
+
+### Espedificação da operação get_value: ###
+
+ENTRADA: endereço de um número racional (R) e endereço de 2 inteiros (/1 e /2)
+PRÉ-CONDIÇÃO: número racional ser válido
+PROCESSO: atribuir ao conteúdo de /1 o valor do numerador de R e ao conteúdo de /2 o valor do denominador de R
+SAÍDA: 1 (sucesso) ou 0 (falha)
+PÓS-CONDIÇÃO: os inteiros com os valores do numerador e denominador de R
+
+### Especificação da operação sum: ###
+
+ENTRADA: endereço de dois racionais (R1 e R2)
+PRÉ-CONDIÇÃO: números racionais serem válidos
+PROCESSO: criar um novo racional R3 e atribuir a ele o resultado da soma de R1 e R2:
+    . num de R3 = (num de R1 x den de R2)+(num de R2 x den de R1)
+    . den de R3 = (den de R1 x den de R2)
+SAÍDA: endereço do número racional R3 ou NULL se operação falhar
+PÓS-CONDIÇÃO: nenhuma
+
+### Especificação da operação delete ###
+
+ENTRADA: endereço do end. de um número racional
+PRÉ-CONDIÇÃO: nenhuma
+PROCESSO: liberar a memória usada pelo número racional e limpar o seu endereço
+SAÍDA: nenhuma
+PÓS-CONDIÇÃO: número racional liberado
+
+### disposição das operações nos arquivos: ###
+
+-Funções implementadas no racional.c
+-Protótipo das funções declaradas no racional.h
+
+    Racional * generate();
+    int set_value(Racional *p, int N, int D);
+    int get_value(Racional *p, int *N, int *D);
+    Racional *sum(Racional *R1, Racional *R2);
+    void delete(Racional **p);
+
+
+
