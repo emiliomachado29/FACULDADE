@@ -1,0 +1,60 @@
+
+## Operações
+
+O TAD possui as seguintes operações:
+
+* 'cria_ponto()' — cria um ponto a partir das coordenadas "x" e "y".
+* 'distancia_ponto()' — calcula a distância entre dois pontos.
+* 'libera_ponto()' — libera a memória utilizada pelo ponto.
+
+## Arquivos
+
+ponto.h
+ponto.c
+main.c
+
+
+### ponto.h
+
+Contém a declaração do tipo 'Ponto' e das funções do TAD.
+
+
+typedef struct ponto Ponto;
+
+Ponto *cria_ponto(float x, float y);
+
+float distancia_ponto(Ponto *p1, Ponto *p2);
+
+void libera_ponto(Ponto **p);
+
+
+### ponto.c
+
+Contém a implementação do TAD e a estrutura do ponto.
+
+struct ponto {
+    float x;
+    float y;
+};
+
+
+A distância entre dois pontos é calculada pela fórmula:
+
+d = √((x1 - x2)² + (y1 - y2)²)
+
+
+### main.c
+
+É o programa principal que utiliza o TAD.
+Nele são informadas as coordenadas dos dois pontos, calculada a distância e, no final, libera a memória utilizada.
+
+## Exemplo
+
+Digite as coordenadas do ponto 1: 1 2
+Digite as coordenadas do ponto 2: 4 6
+
+Distancia entre os pontos: 5.00
+
+
+
+
