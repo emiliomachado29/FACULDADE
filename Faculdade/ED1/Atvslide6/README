@@ -1,22 +1,56 @@
+# TAD Ponto
 
-## Operações
+TAD para representar um ponto no espaço bidimensional, com coordenadas "x" e "y".
 
-O TAD possui as seguintes operações:
+### Especificações dos dados do TAD Ponto
 
-* 'cria_ponto()' — cria um ponto a partir das coordenadas "x" e "y".
-* 'distancia_ponto()' — calcula a distância entre dois pontos.
-* 'libera_ponto()' — libera a memória utilizada pelo ponto.
+DADOS: 2 números reais, representando as coordenadas "x" e "y" de um ponto.
 
-## Arquivos
+### Especificação da operação cria_ponto:
 
-ponto.h
-ponto.c
-main.c
+ENTRADA: duas coordenadas reais "x" e "y"
 
+PRÉ-CONDIÇÃO: nenhuma
 
-### ponto.h
+PROCESSO: criar um ponto a partir das coordenadas "x" e "y"
 
-Contém a declaração do tipo 'Ponto' e das funções do TAD.
+SAÍDA:endereço do ponto criado
+
+PÓS-CONDIÇÃO: nenhuma
+
+### Especificação da operação distancia_ponto:
+
+ENTRADA: endereço de dois pontos "P1" e "P2"
+
+PRÉ-CONDIÇÃO: os dois pontos serem válidos
+
+PROCESSO: calcular a distância entre os dois pontos utilizando:
+
+distância = √((x2 - x1)² + (y2 - y1)²)
+
+SAÍDA: distância entre os pontos
+
+PÓS-CONDIÇÃO: nenhuma
+
+### Especificação da operação libera_ponto:
+
+ENTRADA: endereço do endereço de um ponto
+
+PRÉ-CONDIÇÃO: nenhuma
+
+PROCESSO: liberar a memória usada pelo ponto e limpar o seu endereço
+
+SAÍDA: nenhuma
+
+PÓS-CONDIÇÃO: ponto liberado
+
+### Disposição das operações nos arquivos:
+
+* Funções implementadas no "ponto.c"
+* Protótipos das funções declarados no "ponto.h"
+* Programa aplicativo implementado no "main.c"
+
+### Protótipos das funções:
 
 
 typedef struct ponto Ponto;
@@ -28,33 +62,13 @@ float distancia_ponto(Ponto *p1, Ponto *p2);
 void libera_ponto(Ponto **p);
 
 
-### ponto.c
+### Arquivos do TAD:
 
-Contém a implementação do TAD e a estrutura do ponto.
+# ponto.h
+Contém a definição do tipo "Ponto" e os protótipos das funções.
 
-struct ponto {
-    float x;
-    float y;
-};
+# ponto.c
+Contém a implementação das operações do TAD.
 
-
-A distância entre dois pontos é calculada pela fórmula:
-
-d = √((x1 - x2)² + (y1 - y2)²)
-
-
-### main.c
-
-É o programa principal que utiliza o TAD.
-Nele são informadas as coordenadas dos dois pontos, calculada a distância e, no final, libera a memória utilizada.
-
-## Exemplo
-
-Digite as coordenadas do ponto 1: 1 2
-Digite as coordenadas do ponto 2: 4 6
-
-Distancia entre os pontos: 5.00
-
-
-
-
+# main.c
+Lê as coordenadas dos dois pontos, cria os pontos, calcula a distância, apresenta o resultado e libera a memória utilizada.
